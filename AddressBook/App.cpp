@@ -1,10 +1,10 @@
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 *
-*  Copyright (C) 2020 by Dongmin Jang(�嵿��), All rights reserved.
+*  Copyright (C) 2020 by Dongmin Jang(장동민), All rights reserved.
 *
-*  Purpose of program: Addressbook, �ּҷ� ���α׷�
+*  Purpose of program: Addressbook(주소록 프로그램)
 *
-*  Programmer: Dongmin Jang  (�嵿��),
+*  Programmer: Dongmin Jang  (장동민),
 *                 Software Engineering Lab,
 *                 Department of Electrical and Computer Engineering,
 *                 Sungkyunkwan University
@@ -68,7 +68,7 @@ void App::Run()
 			return;
 		}
 		
-		std::cout << "��� �Ϸ��� EnterŰ�� ��������." << std::endl;
+		std::cout << "계속 하려면 Enter키를 누르세요." << std::endl;
 		getchar();
 	}
 }
@@ -123,20 +123,20 @@ void App::PrintMenu()
 	cout << "*  We are the world!  *" << endl;
 	cout << "*****************" << endl;
 	cout << "" << '\n';
-	cout << "## ������ ���� ##" << endl;
+	cout << "## 오늘의 생일 ##" << endl;
 
 	PrintBirthday();
 	
 	cout << "" << '\n';
 	cout << "-----------------" << endl;
-	cout << " 1. �ּҷ� ���" << endl;
-	cout << " 2. �ּҷ� ���" << endl;
-	cout << " 3. �ּҷ� �˻�" << endl;
-	cout << " 4. �ּҷ� ����" << endl;
-	cout << " 5. ��       ��" << endl;
+	cout << " 1. 주소록 등록" << endl;
+	cout << " 2. 주소록 목록" << endl;
+	cout << " 3. 주소록 검색" << endl;
+	cout << " 4. 주소록 삭제" << endl;
+	cout << " 5. 종       료" << endl;
 	cout << "-----------------" << endl;
-	cout << "������ ��ȣ: " << this->index << endl;
-	cout << "����Ű�� Ȱ���Ͽ� ���ϴ� ��ȣ�� ���� �� EnterŰ�� ��������." << endl;
+	cout << "선택한 번호: " << this->index << endl;
+	cout << "방향키를 활용하여 원하는 번호를 선택 후 Enter키를 누르세요." << endl;
 }
 
 AddressBook* App::FindAddressBook(int index)
@@ -169,35 +169,35 @@ AddressBookIter App::FindAddressBookPos(int index)
 
 void App::AddProc()
 {
-	cout << "[�ּҷ� ���]" << endl;
+	cout << "[주소록 등록]" << endl;
 
 	string name;
-	cout << "�̸�: ";
+	cout << "이름: ";
 	cin >> name;
 	cin.ignore();
 
 	string phoneNumber;
-	cout << "��ȭ��ȣ: ";
+	cout << "전화번호: ";
 	cin >> phoneNumber;
 	cin.ignore();
 
 	string email;
-	cout << "�̸���: ";
+	cout << "이메일: ";
 	cin >> email;
 	cin.ignore();
 
 	string address;
-	cout << "�ּ�(��): ";
+	cout << "주소(도): ";
 	cin >> address;
 	cin.ignore();
 
 	int birthdayMonth;
-	cout << "����(��): ";
+	cout << "생일(월): ";
 	cin >> birthdayMonth;
 	cin.ignore();
 
 	int birthdayDay;
-	cout << "����(��): ";
+	cout << "생일(일): ";
 	cin >> birthdayDay;
 	cin.ignore();
 
@@ -205,12 +205,12 @@ void App::AddProc()
 		phoneNumber, email, address, birthdayMonth, birthdayDay);
 
 	addressBookList.push_back(addressBook);
-	cout << "�߰� �Ǿ����ϴ�." << endl;
+	cout << "추가 되었습니다." << endl;
 }
 
 void App::ListProc()
 {
-	cout << "[�ּҷ� ���]" << endl;
+	cout << "[주소록 목록]" << endl;
 
 	AddressBookIter seek = addressBookList.begin();
 	AddressBookIter end = addressBookList.end();
@@ -224,10 +224,10 @@ void App::ListProc()
 
 void App::SearchProc()
 {
-	cout << "[�ּҷ� �˻�]" << endl;
+	cout << "[주소록 검색]" << endl;
 
 	string name;
-	cout << "�̸�: ";
+	cout << "이름: ";
 	cin >> name;
 	cin.ignore();
 
@@ -246,10 +246,10 @@ void App::SearchProc()
 
 void App::DelProc()
 {
-	cout << "[�ּҷ� ����]" << endl;
+	cout << "[주소록 삭제]" << endl;
 
 	int num;
-	cout << "��ȣ: ";
+	cout << "번호: ";
 	cin >> num;
 	cin.ignore();
 
@@ -260,11 +260,11 @@ void App::DelProc()
 	{
 		addressBookList.erase(seek);
 
-		cout << "���� �Ǿ����ϴ�. " << endl;
+		cout << "삭제 되었습니다. " << endl;
 	}
 	else
 	{
-		cout << "�������� �ʴ� ��ȣ�Դϴ�." << endl;
+		cout << "존재하지 않는 번호입니다." << endl;
 	}
 }
 
@@ -325,13 +325,13 @@ void App::LoadProc()
 	}
 	else
 	{
-		cout << "����� ������ �����ϴ�." << endl;
+		cout << "저장된 파일이 없습니다." << endl;
 	}
 }
 /*
 void App::InitProc()
 {
-	cout << "[���� �ʱ�ȭ]" << endl;
+	cout << "[파일 초기화]" << endl;
 
 	fstream fs;
 	fs.open(fileName, ios::out);
@@ -353,7 +353,7 @@ void App::PrintBirthday()
 		if (ab->getBirthdayMonth() == (current->tm_mon + 1)
 			&& ab->getBirthdayDay() == current->tm_mday)
 		{
-			cout << "<<������ " << ab->getName() << "���� �����Դϴ�!>>" << endl;
+			cout << "<<오늘은 " << ab->getName() << "님의 생일입니다!>>" << endl;
 		}
 	}
 }
