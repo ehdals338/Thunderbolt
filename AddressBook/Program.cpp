@@ -2,7 +2,7 @@
 *
 *  Copyright (C) 2020 by Dongmin Jang(장동민), All rights reserved.
 *
-*  Purpose of program: Addressbook, 주소록 프로그램
+*  Purpose of program: Addressbook(주소록 프로그램)
 *
 *  Programmer: Dongmin Jang  (장동민),
 *                 Software Engineering Lab,
