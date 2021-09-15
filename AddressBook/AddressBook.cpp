@@ -1,10 +1,10 @@
 /*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 *
-*  Copyright (C) 2020 by Dongmin Jang(�嵿��), All rights reserved.
+*  Copyright (C) 2020 by Dongmin Jang(장동민), All rights reserved.
 *
-*  Purpose of program: Addressbook, �ּҷ� ���α׷�
+*  Purpose of program: Addressbook(주소록 프로그램)
 *
-*  Programmer: Dongmin Jang  (�嵿��),
+*  Programmer: Dongmin Jang  (장동민),
 *                 Software Engineering Lab,
 *                 Department of Electrical and Computer Engineering,
 *                 Sungkyunkwan University
@@ -90,10 +90,10 @@ void AddressBook::setBirthdayDay(int birthdayDay)
 
 void AddressBook::Print()
 {
-	cout << "�̸�: " << this->name << ", "
-		<< "����ó: " << this->phoneNumber << ", "
-		<< "�̸���: " << this->email << ", "
-		<< "�ּ�: " << this->address << ", "
-		<< "����: " << this->birthdayMonth << "/" << this->birthdayDay
+	cout << "이름: " << this->name << ", "
+		<< "연락처: " << this->phoneNumber << ", "
+		<< "이메일: " << this->email << ", "
+		<< "주소: " << this->address << ", "
+		<< "생일: " << this->birthdayMonth << "/" << this->birthdayDay
 		<< endl;
 }
